@@ -1,18 +1,14 @@
 module.exports = {
-  plugins: [
-    require.resolve('eslint-plugin-react'),
-    require.resolve('eslint-plugin-react-hooks'),
-    require.resolve('eslint-plugin-import')
-  ],
+  plugins: ['eslint-plugin-react', 'eslint-plugin-react-hooks', 'eslint-plugin-import'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:import/recommended'
   ],
-  parser: require.resolve('@babel/eslint-parser'),
+  parser: '@babel/eslint-parser',
   parserOptions: {
-    configFile: require.resolve('./babel.config.js')
+    configFile: './babel.config.js'
   },
   env: {
     browser: true,

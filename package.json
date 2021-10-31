@@ -3,7 +3,6 @@
     "**/*"
   ],
   "name": "@nkbt/ui",
-  "type": "module",
   "private": true,
   "version": "1.0.0",
   "author": "Nikita Butenko <nik@butenko.me>",

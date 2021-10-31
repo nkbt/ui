@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "eslint . --fix",
     "check:lint": "eslint .",
-    "deps": "yarn workspaces foreach --verbose --parallel exec yarn depcheck",
+    "deps": "yarn workspaces foreach --verbose --parallel exec node $(yarn workspace @nkbt/ui bin depcheck) .",
     "check:deps": "yarn deps",
     "pretty": "prettier . --write",
     "check:pretty": "prettier . --check",

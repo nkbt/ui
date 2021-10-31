@@ -13,7 +13,7 @@
     "lint": "eslint . --fix",
     "check:lint": "eslint .",
     "deps": "yarn workspaces foreach --verbose --parallel exec yarn depcheck",
-    "check:deps": "yarn workspaces foreach --verbose --parallelexec yarn depcheck",
+    "check:deps": "yarn deps",
     "pretty": "prettier . --write",
     "check:pretty": "prettier . --check",
     "css": "stylelint --color '**/*.css'",

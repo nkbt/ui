@@ -1,0 +1,39 @@
+{
+  "workspaces": [
+    "**/*"
+  ],
+  "name": "@nkbt/ui",
+  "type": "module",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Nikita Butenko <nik@butenko.me>",
+  "repository": "github:nkbt/ui",
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "check:lint": "eslint .",
+    "deps": "yarn workspaces foreach --verbose --parallel exec yarn depcheck",
+    "check:deps": "yarn workspaces foreach --verbose --parallelexec yarn depcheck",
+    "pretty": "prettier . --write",
+    "check:pretty": "prettier . --check",
+    "css": "stylelint --color '**/*.css'",
+    "check:css": "stylelint --color '**/*.css'",
+    "nuke": "rm -rf node_modules yarn.lock",
+    "postnuke": "yarn install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/eslint-parser": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "depcheck": "^1.4.2",
+    "eslint": "^7.2.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.4.1",
+    "stylelint": "^14.0.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-prettier": "^1.2.0"
+  }
+}

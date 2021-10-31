@@ -1,0 +1,9 @@
+{
+  "name": "@nkbt/shallow-equal-objects",
+  "type": "module",
+  "version": "1.0.0",
+  "module": "index.js",
+  "author": "Nikita Butenko <nik@butenko.me>",
+  "repository": "github:nkbt/ui",
+  "license": "Apache-2.0"
+}

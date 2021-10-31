@@ -1,0 +1,5 @@
+ignores: [
+  depcheck
+]
+ignore-dirs: [
+]

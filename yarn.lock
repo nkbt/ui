@@ -1346,9 +1346,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nkbt/router@workspace:router":
+"@nkbt/react-router@workspace:react-router":
   version: 0.0.0-use.local
-  resolution: "@nkbt/router@workspace:router"
+  resolution: "@nkbt/react-router@workspace:react-router"
   dependencies:
     "@nkbt/shallow-equal-objects": "workspace:*"
     history: ^5.0.1

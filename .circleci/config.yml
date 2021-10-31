@@ -1,40 +1,21 @@
 version: 2.1
 
 jobs:
-  build:
-    working_directory: ~/app
-    docker:
-      - image: cimg/node:16.8.0
-    steps:
-      - checkout
-      - run: node --version
-      - run: yarn --version
-      - run: yarn install --immutable --immutable-cache
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
   test:
     working_directory: ~/app
     docker:
       - image: cimg/node:16.8.0
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
+      - run: yarn install --immutable --immutable-cache
       - run: yarn check:deps
       - run: yarn check:lint
       - run: yarn check:pretty
       - run: yarn check:css
-
 
 workflows:
   version: 2
 
   workflow:
     jobs:
-      - build:
-          requires: []
-
-      - test:
-          requires: [build]
+      - test

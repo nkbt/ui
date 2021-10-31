@@ -19,4 +19,3 @@ jobs:
       - run: yarn check:deps
       - run: yarn check:lint
       - run: yarn check:pretty
-      - run: yarn check:css

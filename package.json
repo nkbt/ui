@@ -15,8 +15,6 @@
     "check:deps": "yarn deps",
     "pretty": "prettier . --write",
     "check:pretty": "prettier . --check",
-    "css": "stylelint --color '**/*.css'",
-    "check:css": "stylelint --color '**/*.css'",
     "nuke": "rm -rf node_modules yarn.lock",
     "postnuke": "yarn install"
   },
@@ -30,9 +28,6 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.4.1",
-    "stylelint": "^14.0.1",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-prettier": "^1.2.0"
+    "prettier": "^2.4.1"
   }
 }

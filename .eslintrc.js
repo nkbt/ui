@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-  plugins: ['eslint-plugin-react', 'eslint-plugin-react-hooks', 'eslint-plugin-import'],
+  plugins: ['react', 'react-hooks', 'import'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -7,21 +9,20 @@ module.exports = {
     'plugin:import/recommended'
   ],
   parser: '@babel/eslint-parser',
-  parserOptions: {
-    configFile: './babel.config.js'
-  },
-  env: {
-    browser: true,
-    es6: true,
-    node: true
-  },
+  parserOptions: {configFile: path.resolve(__dirname, './babel.config.js')},
+  env: {browser: true, es6: true, node: true},
   settings: {
-    react: {
-      version: '17'
+    react: {version: '17'},
+    'import/resolver': {
+      node: {
+        extensions: ['.js']
+      }
     }
   },
-
   rules: {
-    'max-len': ['error', {code: 120, ignoreUrls: true, ignoreTrailingComments: true}]
+    'react/no-unescaped-entities': 'off',
+
+    'max-len': ['error', {code: 120, ignoreUrls: true, ignoreTrailingComments: true}],
+    'no-unused-vars': ['error', {argsIgnorePattern: '^_'}]
   }
 };

@@ -5,6 +5,5 @@ export * from './hooks';
 export * from './initialState';
 export * from './reducer';
 export * from './Router';
-export * from './sortedObject';
 export * from './StateContext';
 export * from './useLocationSync';

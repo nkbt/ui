@@ -1,5 +1,3 @@
-import {parse, stringify} from 'qs';
-
 export function safeQuery(query = {}) {
   const newQuery = query === null ? {} : query;
 
@@ -11,11 +9,12 @@ export function safeQuery(query = {}) {
 }
 
 export function queryToSearch(query) {
-  const search = stringify(query, {strictNullHandling: true});
-
+  const params = new URLSearchParams(Object.entries(query));
+  params.sort();
+  const search = params.toString();
   return search.length > 0 ? `?${search}` : '';
 }
 
 export function searchToQuery(search) {
-  return safeQuery(parse(search.substr(1), {strictNullHandling: true}));
+  return safeQuery(Object.fromEntries(new URLSearchParams(search.substr(1))));
 }

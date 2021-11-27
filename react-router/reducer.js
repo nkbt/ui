@@ -1,5 +1,4 @@
 import {shallowEqualObjects} from '@nkbt/shallow-equal-objects';
-import {sortedObject} from './sortedObject';
 import {initialState} from './initialState';
 import {queryToSearch, safeQuery} from './codec';
 import {ADD, NAVIGATE, REMOVE, RESTORE} from './constants';
@@ -15,7 +14,7 @@ export function cleanupQuery(query, params) {
   );
 }
 export function recalculate(state) {
-  const newQuery = safeQuery(sortedObject({...state.params, ...state.query}));
+  const newQuery = safeQuery({...state.params, ...state.query});
   const newState = shallowEqualObjects(state.query, newQuery) ? state : {...state, query: newQuery};
 
   const search = queryToSearch(newQuery);
@@ -49,18 +48,11 @@ export function onAdd(state, {params}) {
 }
 
 export function onRemove(state, {params}) {
-  const newQuery = {...state.query};
-  const newParams = {...state.params};
-  Object.keys(params).forEach(param => {
-    if (param in newQuery) {
-      delete newQuery[param];
-    }
-    if (param in newParams) {
-      delete newParams[param];
-    }
+  return recalculate({
+    ...state,
+    query: Object.fromEntries(Object.entries(state.query).filter(([key]) => !(key in params))),
+    params: Object.fromEntries(Object.entries(state.params).filter(([key]) => !(key in params)))
   });
-  Object.assign(state, {query: newQuery, params: newParams});
-  return recalculate(state);
 }
 
 export function reduce(state, action) {

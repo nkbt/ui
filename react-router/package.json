@@ -8,9 +8,8 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@nkbt/shallow-equal-objects": "workspace:*",
-    "history": "^5.0.1",
+    "history": "^5.1.0",
     "prop-types": "^15.7.2",
-    "qs": "^6.10.1",
     "react": "^17.0.2"
   }
 }

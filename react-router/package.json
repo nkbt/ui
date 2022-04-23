@@ -1,7 +1,7 @@
 {
   "name": "@nkbt/react-router",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "module": "index.js",
   "author": "Nikita Butenko <nik@butenko.me>",
   "repository": "github:nkbt/ui",
